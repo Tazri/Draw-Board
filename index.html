@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style.css">
+    <title>Draw Board</title>
+</head>
+<body>
+
+    <h1>Draw Apps</h1>
+
+    <div class="container">
+        <div class="toolbox">
+            <button class="down">-</button>
+            <span class="number">10</span>
+            <button class="up">+</button>
+
+            <div class="color-input">
+                <input type="color" name="color" id="line-color">
+            </div>
+
+            <div class="tool">
+                <button id="pen" class="active"><i class="fas fa-pen"></i></button>
+                <button id="eraser"><i class="fas fa-eraser"></i></button>
+                <div class="color-input">
+                    <input type="color" value="#f0f8ff" name="background-color" id="background-color" title="Background Color">
+                </div>
+            </div>
+        </div>
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <script src="https://kit.fontawesome.com/7985b36beb.js" crossorigin="anonymous"></script>
+    <script src="./src/script.js"></script>
+</body>
+</html>

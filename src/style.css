@@ -1,0 +1,132 @@
+:root{
+    --var-background-color :  linear-gradient(to right, rgb(243, 114, 209) 0%,rgb(44, 19, 241) 100%);
+    --var-active-color : rgb(255, 0, 187);
+    --var-tool-box-background-color : rgba(138, 123, 167, 0.76);
+    --var-text-color: aliceblue;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+*:focus{
+    outline: none;
+}
+
+*::-moz-focus-inner,
+*::-moz-focus-outer{
+    outline: none;
+}
+
+body{
+    background: var(--var-background-color);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    overflow: hidden;
+}
+
+h1{
+    color: var(--var-text-color);
+    padding: 20px;
+}
+
+.container{
+    width: 90vw;
+    height: 80vh;
+    overflow: hidden;
+}
+
+canvas{
+    width: 100%;
+    height: calc(80vh - 50px);
+    background-color: aliceblue;
+    transition: background-color 0.3s ease-in;
+}
+
+.toolbox{
+    width: 100%;
+    background-color: var(--var-tool-box-background-color);
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    height: 50px;
+    padding: 0px 5px;
+}
+
+.toolbox > *{
+    margin: 0px 5px;
+}
+
+.tool{
+    margin-left: auto;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 120px;
+}
+
+button,.color-input{
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 20px;
+    border: none;
+    background-color: var(--var-text-color);
+    color: #333;
+    overflow: hidden;
+}
+
+button{
+    transition: 0.3s ease-in;
+    user-select: none;
+}
+
+span{
+    user-select: none;
+    cursor: text;
+}
+
+button.active{
+    background-color: var(--var-active-color);
+    color: var(--var-text-color);
+}
+
+.color-input{
+    position: relative;
+}
+
+input[type = color]{
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 100px;
+    height: 100px;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+@media (max-width: 380px) {
+    button,.color-input{
+        width: 25px;
+        height: 25px;
+        font-size: 15px;
+    }
+
+    .number{
+        font-size: 15px;
+    }
+
+    .tool{
+        width: 80px;
+    }
+}
